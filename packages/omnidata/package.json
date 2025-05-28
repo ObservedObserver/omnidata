@@ -2,6 +2,19 @@
   "name": "omnidata",
   "version": "0.0.1",
   "type": "module",
+  "main": "./dist/omnidata.umd.js",
+  "module": "./dist/omnidata.es.js",
+  "types": "./dist/omnidata.es.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/omnidata.es.d.ts",
+      "import": "./dist/omnidata.es.js",
+      "require": "./dist/omnidata.umd.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -19,7 +32,8 @@
     "ts-jest": "^29.1.2",
     "ts-node": "^10.9.2",
     "typescript": "~5.8.3",
-    "vite": "^6.3.5"
+    "vite": "^6.3.5",
+    "vite-plugin-dts": "^4.5.4"
   },
   "dependencies": {
     "@types/node": "^22.15.23"
