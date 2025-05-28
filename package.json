@@ -1,0 +1,16 @@
+{
+  "name": "omnidata",
+  "version": "0.0.1",
+  "description": "data loaders",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "keywords": [
+    "data",
+    "loaders",
+    "omnidata"
+  ],
+  "author": "ObservedObserver",
+  "license": "MIT"
+}
