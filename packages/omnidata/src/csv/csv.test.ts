@@ -316,6 +316,18 @@ Jane|30|Los Angeles`;
             expect(result.rows).toHaveLength(3);
             expect(result.rows[0]).toEqual(["John", "25", "New York"]);
         });
+        test("should handle mixed line endings", () => {
+            const csvData = `John,25,New York\r\nJane,30,Los Angeles\nBob,35,Chicago\rAlice,20,Boston\r\n`;
+
+            const parser = createCSVParser();
+            const result = parser.parse(csvData);
+
+            expect(result.rows).toHaveLength(4);
+            expect(result.rows[0]).toEqual(["John", "25", "New York"]);
+            expect(result.rows[1]).toEqual(["Jane", "30", "Los Angeles"]);
+            expect(result.rows[2]).toEqual(["Bob", "35", "Chicago"]);
+            expect(result.rows[3]).toEqual(["Alice", "20", "Boston"]);
+        });
     });
 
     describe("Empty lines and fields", () => {
