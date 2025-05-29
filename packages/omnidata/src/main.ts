@@ -2,3 +2,4 @@
 export * from './csv/index';
 export * from './parquet/index';
 export * from './avro/index';
+export * from './xlsx/index';
